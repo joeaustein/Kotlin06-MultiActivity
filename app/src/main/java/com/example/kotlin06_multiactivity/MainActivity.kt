@@ -22,7 +22,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun goNextActivity(view: View) {
+        // Instancia a Intent
         val intent = Intent(this, DetailActivity::class.java)
+
+        // Passar objeto para nova tela
+        val user = User (
+            userName = "Joe",
+            n1Peso = 2,
+            n1 = 9.2
+        )
+        intent.putExtra("user", user)
+
+        // Inicia a nova tela
         startActivity(intent)
     }
 }
